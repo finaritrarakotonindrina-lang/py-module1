@@ -9,7 +9,7 @@ class Plant:
               f"{self._age} days old")
 
 
-class Flower(Plant): 
+class Flower(Plant):
     def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age)
         self._color = color
