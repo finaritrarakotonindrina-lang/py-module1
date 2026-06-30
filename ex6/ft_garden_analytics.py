@@ -17,13 +17,13 @@ class Plant:
 
         def display(self) -> None:
             """Affiche les statistiques de base."""
-            print(f"Stats: {self.__grow_calls} grow,"
+            print(f"Stats: {self.__grow_calls} grow, "
                   f"{self.__age_calls} age, {self.__show_calls} show")
 
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name: str = name
-        self.height: float = float(height)
-        self._age_days: int = int(age)
+        self.height: float = height
+        self._age_days: int = age
         self.stats: Plant.Stats = self.Stats()
 
     def age(self) -> int:
@@ -32,7 +32,7 @@ class Plant:
 
     def grow(self, cm: float) -> None:
         self.stats.increment_grow()
-        self.height += float(cm)
+        self.height += cm
 
     def set_age(self, days: int) -> None:
         self._age_days = days
@@ -118,7 +118,7 @@ def display_plant_analytics(plant_object: Plant) -> None:
     plant_object.stats.display()
 
 
-if __name__ == "__main__":
+def main() -> None:
     print("=== Garden statistics ===")
 
     print("=== Check year-old")
@@ -171,3 +171,7 @@ if __name__ == "__main__":
     anon_plant.show()
     print("[statistics for Unknown plant]")
     display_plant_analytics(anon_plant)
+
+
+if __name__ == "__main__":
+    main()
